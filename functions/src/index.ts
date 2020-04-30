@@ -16,7 +16,7 @@ export const addProject = Functions.https.onRequest((req, res) => {
   }
   project.id = id;
   if (id) {
-    pRef
+    db
       .child(id)
       .set(project, () => {
         res.status(200).send(project);
